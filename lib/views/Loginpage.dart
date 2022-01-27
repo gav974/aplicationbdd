@@ -1,11 +1,11 @@
-import 'package:aplicationbdd/views/Component/BoxForgotLogin.dart';
+import 'package:aplicationbdd/views/PageForgotPassword/BoxForgotLogin.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'Component/BannerMessaging.dart';
 import 'Component/BoxLogin.dart';
-import 'PageForgotPassword/ForgotPassword.dart';
+
 
 
 
@@ -24,9 +24,10 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    final sizeWidth = MediaQuery.of(context).size.height;
-    final sizeHeight =MediaQuery.of(context).size.width;
+  //  final sizeWidth = MediaQuery.of(context).size.height;
+  //  final sizeHeight =MediaQuery.of(context).size.width;
     return Scaffold(
+
 /*------------- start Skeleton ----------------------*/
        body: Container(
          decoration: BoxDecoration(
@@ -54,6 +55,12 @@ class _LoginPageState extends State<LoginPage> {
 
              ],
              ),
+           Divider(
+             color: Colors.white,
+             height: 1,
+             indent: MediaQuery.of(context).size.width *0.9,
+             endIndent:MediaQuery.of(context).size.width *0.9 ,
+           ),
            ForgotPasswordHomepage(),
            Spacer(flex: 1)
            ],
@@ -73,35 +80,45 @@ class ForgotPasswordHomepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: RichText(
-        text: TextSpan(
-          children: <TextSpan>[
-            TextSpan(text: "J'ai oublié mes codes: ",
-                style:GoogleFonts.outfit(
-                    textStyle:
-                    TextStyle(
-                      color: Colors.white
-                    )
-                ) ),
-            TextSpan(text: 'Renvoyer', style: GoogleFonts.outfit(
-              textStyle: TextStyle(
-                color: Colors.blueAccent,
-              ),
-            ),
-                recognizer: TapGestureRecognizer()..onTap = ()  {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => BoxForgotLogin(),
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.only(top: 40.0 ),
+        child: RichText(
+          text: TextSpan(
+            children: <TextSpan>[
+              TextSpan(text: "J'ai oublié mes codes: ",
+                  style:GoogleFonts.outfit(
+                      textStyle:
+                      TextStyle(
+                        color: Colors.white
+                      )
+                  ) ),
+              TextSpan(text: 'Renvoyer', style: GoogleFonts.outfit(
+                textStyle: TextStyle(
+                  color: Colors.yellow,
+                  shadows: [
+                    Shadow(
+                      color: Colors.black,
+                      offset: Offset(3, 2) ,
+                      blurRadius: 2,
                     ),
-                  );
-                },
-            ),
-          ],
-        ),
-       ),
+
+                  ],
+                ),
+              ),
+                  recognizer: TapGestureRecognizer()..onTap = ()  {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BoxForgotLogin(),
+                      ),
+                    );
+                  },
+              ),
+            ],
+          ),
+         ),
+      ),
     );
   }
 }

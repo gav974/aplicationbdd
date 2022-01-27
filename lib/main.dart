@@ -1,3 +1,4 @@
+import 'package:aplicationbdd/views/PageForgotPassword/BoxForgotLogin.dart';
 import 'package:aplicationbdd/views/Loginpage.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData.dark().copyWith(),
-      home: const LoginPage(),
+      routes: {
+        '/':(context)=> const LoginPage(),
+        '/reinitialisation':(context)=> BoxForgotLogin(),
+      },
+      //home: const LoginPage(),
     );
   }
 }

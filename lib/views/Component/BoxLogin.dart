@@ -6,8 +6,8 @@ class BoxLogin extends StatelessWidget {
    BoxLogin({Key? key,}) : super(key: key);
 
    String _username ="",
-       _password="";
-   final _formKey = GlobalKey<FormState>();
+          _password="";
+ //  final _formKey = GlobalKey<FormState>();
 
 @override
   Widget build(BuildContext context) {
@@ -20,13 +20,14 @@ class BoxLogin extends StatelessWidget {
       height: MediaQuery.of(context).size.width * 0.61,
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Text('CONNEXION',
-                style:GoogleFonts.oswald(textStyle: TextStyle(fontSize: 25,letterSpacing: 1.5))),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Text('CONNEXION',
+                  style:GoogleFonts.oswald(textStyle: TextStyle(fontSize: 25,letterSpacing: 1.5))),
+            ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(15.0),
+          Expanded(
             child: TextFormField(
               cursorColor: Colors.red,
               //initialValue: 'Identifiant',
@@ -69,14 +70,18 @@ class BoxLogin extends StatelessWidget {
           ),
           TextButton(
             style: TextButton.styleFrom(
-      backgroundColor:  Color.fromRGBO(74, 0, 224, 1),
+              backgroundColor:  Color.fromRGBO(74, 0, 224, 1),
               shadowColor: Colors.black,
               onSurface: Colors.white,
-
-
             ),
               onPressed: null,
-              child: Text('SOUMETTRE'),
+              child: Text('SOUMETTRE ',
+                  style:GoogleFonts.outfit(
+                  textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  )
+              )),
           ),
         ],
       ),
