@@ -5,23 +5,19 @@ import 'package:google_fonts/google_fonts.dart';
 class BoxLogin extends StatelessWidget {
    BoxLogin({Key? key,}) : super(key: key);
 
+   String _username ="",
+       _password="";
+   final _formKey = GlobalKey<FormState>();
 
 @override
   Widget build(BuildContext context) {
     return Container(
       decoration:const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(30)),
-      /*  gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end:Alignment.bottomCenter,
-          colors: <Color>[
-            Color.fromRGBO(142, 45, 226, 0.7),
-            Color.fromRGBO(74, 0, 224, 0.0)
-          ],
-        ),*/
+
       ),
       width: MediaQuery.of(context).size.width * 0.9,
-      height: MediaQuery.of(context).size.width * 0.8,
+      height: MediaQuery.of(context).size.width * 0.61,
       child: Column(
         children: [
           Padding(
@@ -41,14 +37,13 @@ class BoxLogin extends StatelessWidget {
                 labelStyle: TextStyle(
                   color: Colors.white54,
                 ),
-                /*helperText: 'Helper text',
-                //suffixIcon: Icon(
-                  //Icons.check_circle,
-                ),*/
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.white),
+
                 ),
               ),
+              onSaved: (userName)=> _username,
+              textInputAction: TextInputAction.next,
             ),
           ),
           Padding(
@@ -65,14 +60,11 @@ class BoxLogin extends StatelessWidget {
                 labelStyle: TextStyle(
                   color: Colors.white54,
                 ),
-                /*helperText: 'Helper text',
-                //suffixIcon: Icon(
-                  //Icons.check_circle,
-                ),*/
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.white),
                 ),
-              ),
+              ),onSaved: (password)=> _password,
+              textInputAction: TextInputAction.next,
             ),
           ),
           TextButton(
@@ -80,6 +72,8 @@ class BoxLogin extends StatelessWidget {
       backgroundColor:  Color.fromRGBO(74, 0, 224, 1),
               shadowColor: Colors.black,
               onSurface: Colors.white,
+
+
             ),
               onPressed: null,
               child: Text('SOUMETTRE'),

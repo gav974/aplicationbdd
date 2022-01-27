@@ -1,8 +1,11 @@
+import 'package:aplicationbdd/views/Component/BoxForgotLogin.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import 'Component/BannerMessaging.dart';
 import 'Component/BoxLogin.dart';
+import 'PageForgotPassword/ForgotPassword.dart';
 
 
 
@@ -51,13 +54,57 @@ class _LoginPageState extends State<LoginPage> {
 
              ],
              ),
+           ForgotPasswordHomepage(),
            Spacer(flex: 1)
            ],
          ),
        ),
     );
   }
+}   /*------------- end Skeleton ----------------------*/
+
+
+/* ------------------------ForgotPassword ------------------------*/
+
+class ForgotPasswordHomepage extends StatelessWidget {
+  const ForgotPasswordHomepage({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: RichText(
+        text: TextSpan(
+          children: <TextSpan>[
+            TextSpan(text: "J'ai oublié mes codes: ",
+                style:GoogleFonts.outfit(
+                    textStyle:
+                    TextStyle(
+                      color: Colors.white
+                    )
+                ) ),
+            TextSpan(text: 'Renvoyer', style: GoogleFonts.outfit(
+              textStyle: TextStyle(
+                color: Colors.blueAccent,
+              ),
+            ),
+                recognizer: TapGestureRecognizer()..onTap = ()  {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BoxForgotLogin(),
+                    ),
+                  );
+                },
+            ),
+          ],
+        ),
+       ),
+    );
+  }
 }
-/*------------- end Skeleton ----------------------*/
+
 
 
