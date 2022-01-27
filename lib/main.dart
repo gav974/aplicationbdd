@@ -1,3 +1,4 @@
+import 'package:aplicationbdd/views/Inscription/Inscription.dart';
 import 'package:aplicationbdd/views/PageForgotPassword/BoxForgotLogin.dart';
 import 'package:aplicationbdd/views/Loginpage.dart';
 import 'package:flutter/material.dart';
@@ -14,11 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: '',
       theme: ThemeData.dark().copyWith(),
       routes: {
         '/':(context)=> const LoginPage(),
         '/reinitialisation':(context)=> BoxForgotLogin(),
+        '/inscription':(context)=> Inscription(),
       },
       //home: const LoginPage(),
     );

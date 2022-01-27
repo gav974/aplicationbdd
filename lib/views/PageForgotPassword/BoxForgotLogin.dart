@@ -1,3 +1,4 @@
+import 'package:aplicationbdd/views/Component/AppBar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,16 +17,14 @@ class _BoxForgotLoginState extends State<BoxForgotLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(icon: Icon(Icons.arrow_back), onPressed: () { Navigator.pop(context); },),
-        title: Text('myApp'),
-      ),
+      appBar: PreferredSize(preferredSize: Size.fromHeight(50),
+      child: appBar()),
       body: SafeArea(
         child: Container(
-          decoration: const BoxDecoration(
+          decoration:  BoxDecoration(
             image: DecorationImage(
               image:NetworkImage("https://images.unsplash.com/photo-1567359781514-3b964e2b04d6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=536&q=80"),
-
+              colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.dstATop),
               fit: BoxFit.cover,
             ),
           ),
@@ -81,4 +80,6 @@ class _BoxForgotLoginState extends State<BoxForgotLogin> {
     );
   }
 }
+
+
 

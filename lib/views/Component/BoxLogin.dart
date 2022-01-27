@@ -31,7 +31,7 @@ class BoxLogin extends StatelessWidget {
             child: TextFormField(
               cursorColor: Colors.red,
               //initialValue: 'Identifiant',
-              maxLength: 20,
+             // maxLength: 20,
               decoration: const InputDecoration(
                 icon: Icon(Icons.person),
                 labelText: 'Identifiant',
@@ -47,14 +47,13 @@ class BoxLogin extends StatelessWidget {
               textInputAction: TextInputAction.next,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(15.0),
+          Expanded(
             child: TextFormField(
               obscureText: true,
               obscuringCharacter: '*',
               cursorColor: Colors.red,
               //initialValue: 'Identifiant',
-              maxLength: 20,
+             // maxLength: 20,
               decoration: const InputDecoration(
                 icon: Icon(Icons.lock),
                 labelText: 'Mot de Passe',
