@@ -1,3 +1,4 @@
+import 'package:aplicationbdd/views/Home/Pagehome.dart';
 import 'package:aplicationbdd/views/Inscription/Inscription.dart';
 import 'package:aplicationbdd/views/PageForgotPassword/BoxForgotLogin.dart';
 import 'package:aplicationbdd/views/Loginpage.dart';
@@ -21,8 +22,9 @@ class MyApp extends StatelessWidget {
         '/':(context)=> const LoginPage(),
         '/reinitialisation':(context)=> BoxForgotLogin(),
         '/inscription':(context)=> Inscription(),
+        '/home':(context)=> PageHome(),
       },
-      //home: const LoginPage(),
+
     );
   }
 }

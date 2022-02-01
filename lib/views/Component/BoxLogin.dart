@@ -1,3 +1,4 @@
+import 'package:aplicationbdd/views/Home/Pagehome.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,24 +12,17 @@ class BoxLogin extends StatelessWidget {
 
 @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration:const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(30)),
-
-      ),
-      width: MediaQuery.of(context).size.width * 0.9,
-      height: MediaQuery.of(context).size.width * 0.61,
-      child: Column(
-        children: [
-          Expanded(
-            child: Padding(
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30.0),
+        child: Column(
+          children: [
+            Padding(
               padding: const EdgeInsets.all(15.0),
               child: Text('CONNEXION',
                   style:GoogleFonts.oswald(textStyle: TextStyle(fontSize: 25,letterSpacing: 1.5))),
             ),
-          ),
-          Expanded(
-            child: TextFormField(
+            TextFormField(
               cursorColor: Colors.red,
               //initialValue: 'Identifiant',
              // maxLength: 20,
@@ -46,9 +40,7 @@ class BoxLogin extends StatelessWidget {
               onSaved: (userName)=> _username,
               textInputAction: TextInputAction.next,
             ),
-          ),
-          Expanded(
-            child: TextFormField(
+            TextFormField(
               obscureText: true,
               obscuringCharacter: '*',
               cursorColor: Colors.red,
@@ -66,23 +58,29 @@ class BoxLogin extends StatelessWidget {
               ),onSaved: (password)=> _password,
               textInputAction: TextInputAction.next,
             ),
-          ),
-          TextButton(
-            style: TextButton.styleFrom(
-              backgroundColor:  Color.fromRGBO(74, 0, 224, 1),
-              shadowColor: Colors.black,
-              onSurface: Colors.white,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20.0),
+              child: TextButton(
+                style: TextButton.styleFrom(
+                  backgroundColor:  Color.fromRGBO(74, 0, 224, 1),
+                  shadowColor: Colors.black,
+                  onSurface: Colors.white,
+                ),
+                  onPressed: ()=>{ Navigator.push(context, MaterialPageRoute(builder: (context)=> PageHome()))} ,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text('SOUMETTRE ',
+                        style:GoogleFonts.outfit(
+                        textStyle: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        )
+                    )),
+                  ),
+              ),
             ),
-              onPressed: null,
-              child: Text('SOUMETTRE ',
-                  style:GoogleFonts.outfit(
-                  textStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  )
-              )),
-          ),
-        ],
+          ],
+        ),
       ),
 
     );

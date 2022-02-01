@@ -24,9 +24,106 @@ body: SafeArea(
          fit: BoxFit.cover,
        ),
      ),
-   child: Column(
+   child: Padding(
+     padding: const EdgeInsets.all(30.0),
+     child: Column(
+       children: [
+         Spacer(flex:1),
+         Text('INSCRIPTION'),
+         TextFormField(
+           //obscureText: true,
+           //obscuringCharacter: '*',
+           cursorColor: Colors.red,
+           //initialValue: 'Identifiant',
+           // maxLength: 20,
+           decoration: const InputDecoration(
+             icon: Icon(Icons.person),
+             labelText: 'Entrez votre Pseudo:',
+             labelStyle: TextStyle(
+               color: Colors.white54,
+             ),
+             enabledBorder: UnderlineInputBorder(
+               borderSide: BorderSide(color: Colors.white),
+             ),
+           ),//onSaved: (password)=> _password,
+           //textInputAction: TextInputAction.next,
+         ),
+         TextFormField(
+           //obscureText: true,
+           //obscuringCharacter: '*',
+           cursorColor: Colors.red,
+           //initialValue: 'Identifiant',
+           // maxLength: 20,
+           decoration: const InputDecoration(
+             icon: Icon(Icons.mail),
+             labelText: 'Entrez votre email:',
+             labelStyle: TextStyle(
+               color: Colors.white54,
+             ),
+             enabledBorder: UnderlineInputBorder(
+               borderSide: BorderSide(color: Colors.white),
+             ),
+           ),
+           //onSaved: (password)=> _password,
+           //textInputAction: TextInputAction.next,
+         ),
+         TextFormField(
+           obscureText: true,
+           obscuringCharacter: '*',
+           cursorColor: Colors.red,
+           //initialValue: 'Identifiant',
+           // maxLength: 20,
+           decoration: const InputDecoration(
+             icon: Icon(Icons.password),
+             labelText: ' Entrez votre Mot de Passe',
+             labelStyle: TextStyle(
+               color: Colors.white54,
+             ),
+             enabledBorder: UnderlineInputBorder(
+               borderSide: BorderSide(color: Colors.white),
+             ),
+           ),
+           //onSaved: (password)=> _password,
+           //textInputAction: TextInputAction.next,
+         ),
+         TextFormField(
+           obscureText: true,
+           obscuringCharacter: '*',
+           cursorColor: Colors.red,
+           //initialValue: 'Identifiant',
+           // maxLength: 20,
+           decoration: const InputDecoration(
+             icon: Icon(Icons.lock),
+             labelText: 'Répeter le Mot de Passe',
+             labelStyle: TextStyle(
+               color: Colors.white54,
+             ),
+             enabledBorder: UnderlineInputBorder(
+               borderSide: BorderSide(color: Colors.white),
+             ),
+           ),
+           //onSaved: (password)=> _password,
+           //textInputAction: TextInputAction.next,
+         ),
+         Padding(
+           padding: const EdgeInsets.symmetric(vertical: 20.0),
+           child: TextButton(
+             style: TextButton.styleFrom(
+               backgroundColor:  Color.fromRGBO(74, 0, 224, 1),
+               shadowColor: Colors.black,
+               onSurface: Colors.white,
+             ),
+             onPressed: null,
+               child: Text('S\'inscrire '),
+           ),
+         ),
+         Spacer(
+           flex: 1,
+         )
+       ],
 
-     ),
+       ),
+   ),
    )
  ),
 

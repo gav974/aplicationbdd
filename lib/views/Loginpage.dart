@@ -97,7 +97,7 @@ class ForgotPasswordHomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.only(top: 40.0 ),
+        padding: const EdgeInsets.only(top: 10.0 ),
         child: RichText(
           text: TextSpan(
             children: <TextSpan>[

@@ -72,7 +72,8 @@ class _BoxForgotLoginState extends State<BoxForgotLogin> {
                       )
                     )
               ),
-              Spacer(flex: 2),
+              Spacer(
+                  flex: 2),
             ],
           ),
         ),
